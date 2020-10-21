@@ -21,7 +21,7 @@ public class ProductController {
     public String  save(@RequestBody Product product){
         productService.save(product);
 
-        return "保存成功!继续操作";
+        return "保存成功!继续操作，hello您好！";
     }
 
 }

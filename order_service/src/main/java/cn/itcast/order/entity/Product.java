@@ -14,4 +14,12 @@ public class Product {
     private String productDesc;
     private String caption;
     private Integer inventory;
+
+    public void setId(long l) {
+        this.id=l;
+    }
+
+    public void setProductName(String s) {
+        this.productName=s;
+    }
 }

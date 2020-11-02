@@ -21,7 +21,9 @@ eureka:
     instance-id: ${spring.cloud.client.ip-address}:${server.port}
 logging:
   level:
+    cn.itcast.order.feign.ProductFeignClient: debug
     root: debug
+
 
 service-product:
   ribbon:
@@ -30,3 +32,16 @@ service-product:
       OkToRetryOnAllOperations: true # 是否对所有操作都进行重试
       MaxAutoRetriesNextServer: 1 # 切换实例的重试次数
       MaxAutoRetries: 1 # 对当前实例的重试次数
+feign:
+  client:
+    config:
+      service-product:
+        loggerLevel: FULL
+hystrix:
+  command:
+    default:
+       execution:
+         isolation:
+           thread:
+             timeoutInMilliseconds: 2000
+

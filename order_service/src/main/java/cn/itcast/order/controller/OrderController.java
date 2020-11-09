@@ -93,4 +93,13 @@ public class OrderController {
         product.setProductName("熔断:触发降级方法");
         return product;
     }
+
+
+            @RequestMapping(value = "/{id}",method = RequestMethod.GET)
+    public String findById2(@PathVariable Long id){
+
+
+
+        return "订单微服务";
+    }
 }

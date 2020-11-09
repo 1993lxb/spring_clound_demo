@@ -1,0 +1,23 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: service-gateway
+  cloud:
+    gateway:
+      routes:
+        - id : service-order
+#          uri : http://127.0.0.1:9002
+          uri: lb://service-order
+          predicates:
+          - Path=/order/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+  instance:
+    prefer-ip-address: true
+
+
+
+

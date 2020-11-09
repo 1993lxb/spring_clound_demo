@@ -1,0 +1,18 @@
+server:
+  port: 8088
+spring:
+  application:
+    name: service-zuul
+
+zuul:
+  routes:
+    order-server:
+      path: /service-order/**
+#      url: http://127.0.0.1:9002
+      serviceId: service-order
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8000/eureka/
+
+
